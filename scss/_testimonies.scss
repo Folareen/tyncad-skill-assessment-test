@@ -1,0 +1,94 @@
+.testimonies--section{
+    text-align: center;
+    padding: 0 0 50px 0;
+
+    @include desktop{
+        padding: 0 0 margin(desktop) 0;
+    }
+
+    h3{
+        font-size: 46px;
+        color : $dark-blue;
+        font-weight: weight(bolder);
+        text-align: center;
+        margin: 70px 0;
+    }
+
+    .testimonies{
+        display: flex;
+        margin: 40px 0;
+        width: 400vw;
+        max-width: 1534px;
+        transition: all 1s linear;
+
+        @include tablet{
+            max-width: unset;
+            width: 200vw;
+        }
+
+        @include desktop{
+            width: 150vw;
+        }
+
+        &__content{
+            margin: 0 10px;
+            position: relative;
+            background-color: $very-light-gray;
+            text-align: center;
+            padding: 0 30px 30px 30px;
+
+            width: 25%;
+
+            @include tablet{
+                width: 50%;
+            }
+
+            @include desktop{
+                width: 60%;
+            }
+
+
+
+            img{
+                width: 80px;
+                height: 77px;
+                position: relative;
+                top: -37.5px;
+            }
+
+            h5{
+                font-size: 15px;
+                color: $dark-blue;
+                margin-bottom: 10px;
+            }
+            p{
+                font-size: 15px;
+                color: $dark-grayish-blue;
+            }
+        }
+    }
+
+    .pagination{
+        margin: 30px auto 60px auto;
+        width: 100px;
+        display: flex;
+        justify-content: space-evenly;
+
+        @include desktop{
+            display: none;
+        }
+
+        span{
+            width: 15px;
+            height: 15px;
+            background-color: $white;
+            border: 2px solid $bright-red;
+            border-radius: 50%;
+            transition: all 1s ease-out;
+
+            &.current{
+                background-color: $bright-red;
+            }
+        }
+    }
+}

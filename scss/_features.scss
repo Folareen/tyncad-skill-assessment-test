@@ -1,0 +1,112 @@
+.features{
+    margin-top: 97px;
+
+    &__header{
+        text-align: center;
+
+        h3{
+            font-size: 30px;
+            line-height: 1.6;
+            color: $dark-blue;
+            font-weight: weight(bolder);
+            padding: 0 60px;
+        }
+        p{
+            font-size: 14px;
+            line-height: 1.6;
+            color: $dark-grayish-blue;
+            padding: 0 30px;
+        }
+    }
+
+    .features__contentbox{
+        .feature{
+            display: flex;
+            flex-direction: column;
+            margin-top: 50px;
+            margin-left: 16px;
+
+
+            &__header{
+                padding: 13px 0 13px 70px;
+                color: $dark-blue;
+                background-color: $very-pale-red;
+                border-radius: 50px 0 0 50px;
+                position: relative;
+    
+                span{
+                    padding: 13px 20px;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    color: $white;
+                    background-color: $bright-red;
+                    border-radius: 50px;
+    
+                }
+            }
+    
+            p{
+                color: $dark-grayish-blue;
+                margin: 18px 0;
+                padding-right: 10px;
+            }
+        }
+    }
+
+    // BIGGER SCREENS
+    @include tablet{
+        display: flex;
+        justify-content: space-between;
+        margin: margin(tablet);
+        
+
+
+        &__header, .features__contentbox{
+            width: 50%;
+
+        }
+
+        &__header{
+            text-align: left;
+            
+            h3, p{
+                padding: 0;
+                margin: 0;
+            }
+
+            p{
+                width: 60%;
+            }
+
+        }
+
+        .features__contentbox{
+
+            .feature{
+                margin: 0;
+                margin-bottom: 20px;
+                
+                h4{
+                    background-color: transparent;
+                }
+                P{
+                    margin-left: 70px;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    @include desktop{
+        margin: margin(desktop);
+
+        &__header{
+            
+            h3{
+                font-size: 40px;
+            }
+        }
+    }
+    
+}

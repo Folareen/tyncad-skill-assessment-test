@@ -1,0 +1,179 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 42px 25px;
+    position: relative;
+    z-index: 3;
+
+    // MOBILE VIEW
+    &__logo{
+        width: 111px;
+        height: 26px;
+        align-self: center;
+    }
+
+    nav{
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        background-image:linear-gradient(to bottom, hsla(227, 12%, 61%, .1), hsla(233, 12%, 13%, .6));
+        position: absolute;
+        z-index: 4;
+        top: 0;
+        right: 0;
+        left: 0;
+        @include transition(.5s);
+        
+        &.open{
+            height: 100vh;
+            overflow: visible;
+            z-index: 3;
+            padding-top: 110px;
+
+
+            ul{
+                height: 244px;
+            }
+        }
+        
+        ul{
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            background-color: $white;
+            position: absolute;
+            height: 0;
+            overflow: hidden;
+            width: 85%;
+            padding: 20px 0;
+            left: 50%;
+            transform: translateX(-50%);
+            @include transition(.5s);
+
+            li{
+                margin-bottom: 26px;
+                text-align: center;
+                
+                &:last-child{
+                    margin-bottom: 0;
+                }
+                a{
+                    text-decoration: none;
+                    color: $dark-blue;
+                    font-size: 0.875rem;
+                    font-weight: weight(bolder);
+                    width: 100%;
+                    height: 100%;
+                    @include transition(.5s);
+
+                    &:hover{
+                        color: $dark-grayish-blue;
+                    }
+                }
+                
+            }
+
+        }
+    }
+
+    > .get-started{
+        display: none;
+    }
+
+    .hamburger{
+        border: none;
+        outline: none;
+        background: transparent;
+        position: relative;
+        z-index: 5;
+
+        &:hover{
+            cursor: pointer;
+        }
+
+        div{
+            width: 25px;
+            height: 4px;
+            background-color: $dark-blue;
+            margin-bottom: 3px;
+            @include transition(.5s);
+            transition-timing-function: linear;
+        }
+
+        &.open-nav{
+
+            .hamburger__top{
+                background-color: hsl(0, 59%, 41%);
+                transform: rotate(405deg);
+                transform-origin: 3px;
+            }
+            .hamburger__middle{
+                background-color: hsl(0, 59%, 41%);
+                transform: scale(0);
+            }
+            .hamburger__bottom{
+                background-color: hsl(0, 59%, 41%);
+                transform: rotate(-405deg);
+                transform-origin: 3px;
+            }
+        }
+    }
+
+    // TABLET VIEW
+    @include tablet{
+        align-items: center;
+        padding: 55px 0;
+        justify-content: space-around;
+
+        img{
+            align-items: center;
+        }
+
+        nav{
+            height: unset;
+            width: max-content;
+            background: transparent;
+            align-self: center;
+            position: relative;
+            overflow: visible;
+            top: unset;
+            right: unset;
+            left: unset;
+            transform: unset;
+
+            ul{
+                background: transparent;
+                position: relative;
+                flex-direction: row;
+                width: 100%;
+                height: unset;
+                padding: 0;
+                align-self: center;
+
+                li{
+                    margin: 0 24px 0 0;
+                    
+
+                    &:last-child{
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+
+        .get-started {
+            display: inline-flex;
+        }
+
+        .hamburger{
+            display: none;
+        }
+    }
+
+    // DESKTOP
+    @include desktop{
+        padding: 55px 169px;
+        justify-content: space-between;
+    }
+}

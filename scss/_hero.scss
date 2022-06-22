@@ -1,0 +1,72 @@
+.hero{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    
+    &__image{
+        width: 90%;
+        max-height: 350px;
+        object-fit: contain;
+        align-self: center;
+    }
+
+    &__textbox{
+        text-align: center;
+        // background-image: url(/images/bg-simplify-section-mobile.svg);
+        // background-position: center;
+        // background-color: $bright-red;
+
+        
+        h2{
+            font-size: 1.75rem;
+            font-size: 36px;
+            color: $dark-blue;
+            padding: 0 33px;
+            font-weight: weight(bolder);
+            font-family: 'Be Vietnam Pro';
+
+        }
+
+        p{
+            color: $dark-grayish-blue;
+            font-size: 15px;
+            line-height: 1.5;
+            padding: 0 41px;
+            margin: 21px 0;
+        }
+
+        .get-started{
+            margin: 8px 0;
+        }
+    }
+
+    // TABLET
+    @include tablet{
+        flex-direction: row-reverse;
+        margin: 62px;
+
+        &__image{
+            width: 50%;
+        }
+
+        &__textbox{
+            width: 50%;
+            text-align: left;
+
+            h2, p{
+                padding: 0;
+            }
+            
+        }
+    }
+
+    // DESKTOP
+    @include desktop{
+        margin: 62px 169px;
+
+        h2{
+            font-size: 55px;
+        }
+    }
+}

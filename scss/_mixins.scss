@@ -1,0 +1,19 @@
+@mixin center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin transition($time) {
+    transition: all $time ease-in-out;
+}
+
+@mixin tablet{
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media screen and (min-width: 1200px) {
+        @content;
+    }
+}

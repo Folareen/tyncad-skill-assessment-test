@@ -1,0 +1,6 @@
+@function weight($weight){
+    @return map-get($font-weight, $weight)
+}
+@function margin($margin){
+    @return map-get($body-margin , $margin)
+}
